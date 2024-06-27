@@ -13,33 +13,33 @@
         .tab-content.active { display: block; }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen p-4">
+<body class="bg-gray-100 min-h-screen p-2 sm:p-4">
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-        <h1 class="text-2xl font-bold p-6 bg-indigo-600 text-white">Advanced Performance Calculator</h1>
+        <h1 class="text-xl sm:text-2xl font-bold p-4 sm:p-6 bg-indigo-600 text-white">Advanced Performance Calculator</h1>
         
-        <div class="flex border-b">
-            <button class="tab-button px-4 py-2 font-semibold text-gray-700 hover:text-indigo-600 focus:outline-none" data-tab="campaign">Campaign</button>
-            <button class="tab-button px-4 py-2 font-semibold text-gray-700 hover:text-indigo-600 focus:outline-none" data-tab="channels">Channels</button>
-            <button class="tab-button px-4 py-2 font-semibold text-gray-700 hover:text-indigo-600 focus:outline-none" data-tab="sales">Sales</button>
-            <button class="tab-button px-4 py-2 font-semibold text-gray-700 hover:text-indigo-600 focus:outline-none" data-tab="admin">Admin</button>
+        <div class="flex flex-wrap border-b">
+            <button class="tab-button px-2 py-2 text-sm sm:px-4 sm:py-2 sm:text-base font-semibold text-gray-700 hover:text-indigo-600 focus:outline-none" data-tab="campaign">Campaign</button>
+            <button class="tab-button px-2 py-2 text-sm sm:px-4 sm:py-2 sm:text-base font-semibold text-gray-700 hover:text-indigo-600 focus:outline-none" data-tab="channels">Channels</button>
+            <button class="tab-button px-2 py-2 text-sm sm:px-4 sm:py-2 sm:text-base font-semibold text-gray-700 hover:text-indigo-600 focus:outline-none" data-tab="sales">Sales</button>
+            <button class="tab-button px-2 py-2 text-sm sm:px-4 sm:py-2 sm:text-base font-semibold text-gray-700 hover:text-indigo-600 focus:outline-none" data-tab="admin">Admin</button>
         </div>
 
-        <div class="p-6">
+        <div class="p-4 sm:p-6">
             <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-4 text-indigo-800">Preset Management</h2>
-                <div class="flex space-x-2">
-                    <input type="text" id="presetName" placeholder="Preset Name" class="flex-grow border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <button id="savePreset" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Save Preset</button>
-                    <select id="loadPreset" class="border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <h2 class="text-lg sm:text-xl font-semibold mb-4 text-indigo-800">Preset Management</h2>
+                <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                    <input type="text" id="presetName" placeholder="Preset Name" class="flex-grow border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                    <button id="savePreset" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 text-sm">Save Preset</button>
+                    <select id="loadPreset" class="border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm">
                         <option value="">Load Preset</option>
                     </select>
-                    <button id="deletePreset" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Delete Preset</button>
+                    <button id="deletePreset" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 text-sm">Delete Preset</button>
                 </div>
             </div>
 
             <div id="campaign" class="tab-content active">
-                <h2 class="text-xl font-semibold mb-4 text-indigo-800">Campaign Details</h2>
-                <div class="grid grid-cols-2 gap-4">
+                <h2 class="text-lg sm:text-xl font-semibold mb-4 text-indigo-800">Campaign Details</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Total planned budget</label>
                         <input type="number" id="totalPlannedBudget" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="0">
@@ -81,14 +81,14 @@
             </div>
 
             <div id="channels" class="tab-content">
-                <h2 class="text-xl font-semibold mb-4 text-indigo-800">Channels</h2>
-                <div id="channelList" class="space-y-4"></div>
-                <button id="addChannel" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add Channel</button>
+                <h2 class="text-lg sm:text-xl font-semibold mb-4 text-indigo-800">Channel Budget Split</h2>
+                <div id="channelList" class="space-y-2"></div>
+                <button id="addChannel" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 text-sm">Add Channel</button>
             </div>
 
             <div id="sales" class="tab-content">
-                <h2 class="text-xl font-semibold mb-4 text-indigo-800">Sales</h2>
-                <div class="grid grid-cols-2 gap-4">
+                <h2 class="text-lg sm:text-xl font-semibold mb-4 text-indigo-800">Sales</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Goal Type</label>
                         <select id="goalType" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -120,8 +120,8 @@
             </div>
 
             <div id="admin" class="tab-content">
-                <h2 class="text-xl font-semibold mb-4 text-indigo-800">Admin Fee</h2>
-                <div class="grid grid-cols-2 gap-4">
+                <h2 class="text-lg sm:text-xl font-semibold mb-4 text-indigo-800">Admin Fee</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700">Admin Fee Type</label>
                         <select id="adminFeeType" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -205,200 +205,201 @@
             channelList.innerHTML = '';
             channels.forEach((channel, index) => {
                 const div = document.createElement('div');
-                div.className = 'flex items-center space-x-2';
+                div.className = 'flex items-center space-x-2 mb-2';
                 div.innerHTML = `
-                    <input type="text" value="${channel.name}" class="flex-grow border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" onchange="updateChannelName(${index}, this.value)">
-                    <input type="number" value="${channel.percentage}" class="w-20 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" onchange="updateChannelPercentage(${index}, this.value)">
-                    <button onclick="removeChannel(${index})" class="text-red-600 hover:text-red-800">Remove</button>
+                    <input type="text" value="${channel.name}" class="w-1/2 sm:w-2/3 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm" onchange="updateChannelName(${index}, this.value)">
+                    <input type="number" value="${channel.percentage}" class="w-1/4 sm:w-1/6 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm" onchange="updateChannelPercentage(${index}, this.value)">
+                    <span class="text-sm">%</span>
+                    <button onclick="removeChannel(${index})" class="px-2 py-1 bg-red-100 text-red-600 rounded-md hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 text-sm">-</button>
                 `;
                 channelList.appendChild(div);
-        });
-    }
-
-    function updateChannelName(index, name) {
-        channels[index].name = name;
-        updateCalculations();
-    }
-
-    function updateChannelPercentage(index, percentage) {
-        channels[index].percentage = parseFloat(percentage);
-        updateCalculations();
-    }
-
-    function removeChannel(index) {
-        channels.splice(index, 1);
-        updateChannelList();
-        updateCalculations();
-    }
-
-    function updateCalculations() {
-        const totalPlannedBudget = parseFloat(document.getElementById('totalPlannedBudget').value) || 0;
-        const spentBudget = parseFloat(document.getElementById('spentBudget').value) || 0;
-        const startDate = new Date(document.getElementById('startDate').value);
-        const endDate = new Date(document.getElementById('endDate').value);
-        const today = new Date();
-
-        // Calculate remaining budget (after admin fee)
-        const adminFeeType = document.getElementById('adminFeeType').value;
-        const adminFeeValue = parseFloat(document.getElementById('adminFeeValue').value) || 0;
-        let adminFeeAmount = 0;
-
-        switch (adminFeeType) {
-            case 'fixed':
-                adminFeeAmount = adminFeeValue;
-                break;
-            case 'plannedPercentage':
-                adminFeeAmount = totalPlannedBudget * (adminFeeValue / 100);
-                break;
-            case 'spentPercentage':
-                adminFeeAmount = spentBudget * (adminFeeValue / 100);
-                break;
+            });
         }
 
-        const remainingBudget = totalPlannedBudget - spentBudget - adminFeeAmount;
-        document.getElementById('remainingBudget').textContent = `€${remainingBudget.toFixed(2)}`;
-        document.getElementById('adminFeeAmount').textContent = `€${adminFeeAmount.toFixed(2)}`;
-
-        // Calculate remaining days
-        const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
-        const daysPassed = Math.ceil((today - startDate) / (1000 * 60 * 60 * 24));
-        const remainingDays = Math.max(0, totalDays - daysPassed);
-        document.getElementById('remainingDays').textContent = remainingDays;
-
-        // Calculate budget pacing
-        const timePassed = Math.min(100, (daysPassed / totalDays) * 100);
-        const budgetSpent = (spentBudget / totalPlannedBudget) * 100;
-        document.getElementById('budgetPacing').textContent = `${timePassed.toFixed(2)}% time / ${budgetSpent.toFixed(2)}% budget`;
-
-        // Update channel budgets
-        channels.forEach(channel => {
-            const channelBudget = (totalPlannedBudget * (channel.percentage / 100)).toFixed(2);
-            const channelBudgetElement = document.getElementById(`${channel.name}Budget`);
-            if (channelBudgetElement) {
-                channelBudgetElement.textContent = `€${channelBudget}`;
-            }
-        });
-
-        // Calculate goal pacing
-        const goalType = document.getElementById('goalType').value;
-        const goalValue = parseFloat(document.getElementById('goalValue').value) || 0;
-        const currentValue = parseFloat(document.getElementById('currentValue').value) || 0;
-        const goalPacing = goalValue > 0 ? (currentValue / goalValue) * 100 : 0;
-        document.getElementById('goalPacing').textContent = `${goalPacing.toFixed(2)}% achieved`;
-
-        const dailyGoal = totalDays > 0 ? goalValue / totalDays : 0;
-        const currentDailyAverage = daysPassed > 0 ? currentValue / daysPassed : 0;
-        document.getElementById('dailyGoal').textContent = `${dailyGoal.toFixed(2)} per day`;
-        document.getElementById('currentDailyAverage').textContent = `${currentDailyAverage.toFixed(2)} per day`;
-    }
-
-    function openTab(tabName) {
-        const tabContents = document.querySelectorAll('.tab-content');
-        tabContents.forEach(tab => {
-            tab.classList.remove('active');
-        });
-        document.getElementById(tabName).classList.add('active');
-
-        const tabButtons = document.querySelectorAll('.tab-button');
-        tabButtons.forEach(button => {
-            if (button.getAttribute('data-tab') === tabName) {
-                button.classList.add('text-indigo-600', 'border-b-2', 'border-indigo-600');
-            } else {
-                button.classList.remove('text-indigo-600', 'border-b-2', 'border-indigo-600');
-            }
-        });
-    }
-
-    function savePreset() {
-        const presetName = document.getElementById('presetName').value.trim();
-        if (!presetName) {
-            alert('Please enter a preset name');
-            return;
+        function updateChannelName(index, name) {
+            channels[index].name = name;
+            updateCalculations();
         }
 
-        const presetData = {
-            totalPlannedBudget: document.getElementById('totalPlannedBudget').value,
-            spentBudget: document.getElementById('spentBudget').value,
-            startDate: document.getElementById('startDate').value,
-            endDate: document.getElementById('endDate').value,
-            channels: channels,
-            goalType: document.getElementById('goalType').value,
-            goalValue: document.getElementById('goalValue').value,
-            currentValue: document.getElementById('currentValue').value,
-            adminFeeType: document.getElementById('adminFeeType').value,
-            adminFeeValue: document.getElementById('adminFeeValue').value
-        };
+        function updateChannelPercentage(index, percentage) {
+            channels[index].percentage = parseFloat(percentage);
+            updateCalculations();
+        }
 
-        localStorage.setItem(`preset_${presetName}`, JSON.stringify(presetData));
-        updatePresetList();
-        alert('Preset saved successfully');
-    }
-
-    function loadPreset() {
-        const presetName = document.getElementById('loadPreset').value;
-        if (!presetName) return;
-
-        const presetData = JSON.parse(localStorage.getItem(presetName));
-        if (presetData) {
-            document.getElementById('totalPlannedBudget').value = presetData.totalPlannedBudget;
-            document.getElementById('spentBudget').value = presetData.spentBudget;
-            document.getElementById('startDate').value = presetData.startDate;
-            document.getElementById('endDate').value = presetData.endDate;
-            channels = presetData.channels;
-            document.getElementById('goalType').value = presetData.goalType;
-            document.getElementById('goalValue').value = presetData.goalValue;
-            document.getElementById('currentValue').value = presetData.currentValue;
-            document.getElementById('adminFeeType').value = presetData.adminFeeType;
-            document.getElementById('adminFeeValue').value = presetData.adminFeeValue;
-
+        function removeChannel(index) {
+            channels.splice(index, 1);
             updateChannelList();
             updateCalculations();
         }
-    }
 
-    function deletePreset() {
-        const presetName = document.getElementById('loadPreset').value;
-        if (!presetName) {
-            alert('Please select a preset to delete');
-            return;
+        function updateCalculations() {
+            const totalPlannedBudget = parseFloat(document.getElementById('totalPlannedBudget').value) || 0;
+            const spentBudget = parseFloat(document.getElementById('spentBudget').value) || 0;
+            const startDate = new Date(document.getElementById('startDate').value);
+            const endDate = new Date(document.getElementById('endDate').value);
+            const today = new Date();
+
+            // Calculate remaining budget (after admin fee)
+            const adminFeeType = document.getElementById('adminFeeType').value;
+            const adminFeeValue = parseFloat(document.getElementById('adminFeeValue').value) || 0;
+            let adminFeeAmount = 0;
+
+            switch (adminFeeType) {
+                case 'fixed':
+                    adminFeeAmount = adminFeeValue;
+                    break;
+                case 'plannedPercentage':
+                    adminFeeAmount = totalPlannedBudget * (adminFeeValue / 100);
+                    break;
+                case 'spentPercentage':
+                    adminFeeAmount = spentBudget * (adminFeeValue / 100);
+                    break;
+            }
+
+            const remainingBudget = totalPlannedBudget - spentBudget - adminFeeAmount;
+            document.getElementById('remainingBudget').textContent = `€${remainingBudget.toFixed(2)}`;
+            document.getElementById('adminFeeAmount').textContent = `€${adminFeeAmount.toFixed(2)}`;
+
+            // Calculate remaining days
+            const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+            const daysPassed = Math.ceil((today - startDate) / (1000 * 60 * 60 * 24));
+            const remainingDays = Math.max(0, totalDays - daysPassed);
+            document.getElementById('remainingDays').textContent = remainingDays;
+
+            // Calculate budget pacing
+            const timePassed = Math.min(100, (daysPassed / totalDays) * 100);
+            const budgetSpent = (spentBudget / totalPlannedBudget) * 100;
+            document.getElementById('budgetPacing').textContent = `${timePassed.toFixed(2)}% time / ${budgetSpent.toFixed(2)}% budget`;
+
+            // Update channel budgets
+            channels.forEach(channel => {
+                const channelBudget = (totalPlannedBudget * (channel.percentage / 100)).toFixed(2);
+                const channelBudgetElement = document.getElementById(`${channel.name}Budget`);
+                if (channelBudgetElement) {
+                    channelBudgetElement.textContent = `€${channelBudget}`;
+                }
+            });
+
+            // Calculate goal pacing
+            const goalType = document.getElementById('goalType').value;
+            const goalValue = parseFloat(document.getElementById('goalValue').value) || 0;
+            const currentValue = parseFloat(document.getElementById('currentValue').value) || 0;
+            const goalPacing = goalValue > 0 ? (currentValue / goalValue) * 100 : 0;
+            document.getElementById('goalPacing').textContent = `${goalPacing.toFixed(2)}% achieved`;
+
+            const dailyGoal = totalDays > 0 ? goalValue / totalDays : 0;
+            const currentDailyAverage = daysPassed > 0 ? currentValue / daysPassed : 0;
+            document.getElementById('dailyGoal').textContent = `${dailyGoal.toFixed(2)} per day`;
+            document.getElementById('currentDailyAverage').textContent = `${currentDailyAverage.toFixed(2)} per day`;
         }
 
-        localStorage.removeItem(presetName);
-        updatePresetList();
-        alert('Preset deleted successfully');
-    }
+        function openTab(tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
 
-    function updatePresetList() {
-        const loadPresetSelect = document.getElementById('loadPreset');
-        loadPresetSelect.innerHTML = '<option value="">Load Preset</option>';
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                if (button.getAttribute('data-tab') === tabName) {
+                    button.classList.add('text-indigo-600', 'border-b-2', 'border-indigo-600');
+                } else {
+                    button.classList.remove('text-indigo-600', 'border-b-2', 'border-indigo-600');
+                }
+            });
+        }
 
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key.startsWith('preset_')) {
-                const option = document.createElement('option');
-                option.value = key;
-                option.textContent = key.replace('preset_', '');
-                loadPresetSelect.appendChild(option);
+        function savePreset() {
+            const presetName = document.getElementById('presetName').value.trim();
+            if (!presetName) {
+                alert('Please enter a preset name');
+                return;
+            }
+
+            const presetData = {
+                totalPlannedBudget: document.getElementById('totalPlannedBudget').value,
+                spentBudget: document.getElementById('spentBudget').value,
+                startDate: document.getElementById('startDate').value,
+                endDate: document.getElementById('endDate').value,
+                channels: channels,
+                goalType: document.getElementById('goalType').value,
+                goalValue: document.getElementById('goalValue').value,
+                currentValue: document.getElementById('currentValue').value,
+                adminFeeType: document.getElementById('adminFeeType').value,
+                adminFeeValue: document.getElementById('adminFeeValue').value
+            };
+
+            localStorage.setItem(`preset_${presetName}`, JSON.stringify(presetData));
+            updatePresetList();
+            alert('Preset saved successfully');
+        }
+
+        function loadPreset() {
+            const presetName = document.getElementById('loadPreset').value;
+            if (!presetName) return;
+
+            const presetData = JSON.parse(localStorage.getItem(presetName));
+            if (presetData) {
+                document.getElementById('totalPlannedBudget').value = presetData.totalPlannedBudget;
+                document.getElementById('spentBudget').value = presetData.spentBudget;
+                document.getElementById('startDate').value = presetData.startDate;
+                document.getElementById('endDate').value = presetData.endDate;
+                channels = presetData.channels;
+                document.getElementById('goalType').value = presetData.goalType;
+                document.getElementById('goalValue').value = presetData.goalValue;
+                document.getElementById('currentValue').value = presetData.currentValue;
+                document.getElementById('adminFeeType').value = presetData.adminFeeType;
+                document.getElementById('adminFeeValue').value = presetData.adminFeeValue;
+
+                updateChannelList();
+                updateCalculations();
             }
         }
-    }
 
-    function animateTabs() {
-        gsap.from('.tab-button', {
-            duration: 0.5,
-            y: -20,
-            opacity: 0,
-            stagger: 0.1,
-            ease: 'power3.out'
-        });
-        gsap.from('.tab-content', {
-            duration: 0.5,
-            y: 20,
-            opacity: 0,
-            delay: 0.3,
-            ease: 'power3.out'
-        });
-    }
-</script>
+        function deletePreset() {
+            const presetName = document.getElementById('loadPreset').value;
+            if (!presetName) {
+                alert('Please select a preset to delete');
+                return;
+            }
+
+            localStorage.removeItem(presetName);
+            updatePresetList();
+            alert('Preset deleted successfully');
+        }
+
+        function updatePresetList() {
+            const loadPresetSelect = document.getElementById('loadPreset');
+            loadPresetSelect.innerHTML = '<option value="">Load Preset</option>';
+
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('preset_')) {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = key.replace('preset_', '');
+                    loadPresetSelect.appendChild(option);
+                }
+            }
+        }
+
+        function animateTabs() {
+            gsap.from('.tab-button', {
+                duration: 0.5,
+                y: -20,
+                opacity: 0,
+                stagger: 0.1,
+                ease: 'power3.out'
+            });
+            gsap.from('.tab-content', {
+                duration: 0.5,
+                y: 20,
+                opacity: 0,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+        }
+    </script>
 </body>
 </html>
