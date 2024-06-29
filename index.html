@@ -178,6 +178,10 @@
                         </label>
                         <span id="currentDailySpend" class="block mt-1 text-sm font-semibold text-indigo-600">€0.00</span>
                     </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Admin Fee Amount</label>
+                        <span id="adminFeeAmountCampaign" class="block mt-1 text-sm font-semibold text-indigo-600">€0.00</span>
+                    </div>
                 </div>
                 <button class="clear-tab mt-4 px-4 py-2 bg-indigo-200 text-indigo-800 rounded-md hover:bg-indigo-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 text-sm">Clear Fields</button>
             </div>
@@ -481,6 +485,7 @@
             const remainingBudget = totalPlannedBudget - spentBudget - adminFeeAmount;
             document.getElementById('remainingBudget').textContent = `€${formatNumber(remainingBudget.toFixed(2))}`;
             document.getElementById('adminFeeAmount').textContent = `€${formatNumber(adminFeeAmount.toFixed(2))}`;
+            document.getElementById('adminFeeAmountCampaign').textContent = `€${formatNumber(adminFeeAmount.toFixed(2))}`;
 
             // Calculate total days and remaining days
             const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
